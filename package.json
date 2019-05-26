@@ -1,0 +1,23 @@
+{
+  "name": "travel-map-socket-service",
+  "version": "1.0.0",
+  "description": "This repo will serve as the travel map service responsible for live updates and messaging with web sockets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectunic0rn/Travel-map-socket-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projectunic0rn/Travel-map-socket-service/issues"
+  },
+  "homepage": "https://github.com/projectunic0rn/Travel-map-socket-service#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
