@@ -1,13 +1,14 @@
-const app = require('express')();
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-const PORT = process.env.port || 9000;
+const port = process.env.PORT || 9500
 
 
+server.listen(port, () => {
+    console.log("Server up on port " + port)
+});
 
-app.get("/", (req, res) => {
-    res.send("express server is working")
-})
-
-app.listen(PORT, () => {
-    console.log(`Server is up at port ${PORT}`)
+io.on('connection', (socket) => {
+    console.log("USER CONNECTED")
 })
