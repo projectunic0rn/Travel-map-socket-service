@@ -6,7 +6,7 @@ const port = process.env.PORT || 9500
 
 
 app.get("/", (req, res) => {
-    res.send("Welome to thr travel map socket service!")
+    res.send("Welome to the travel map socket service!")
 })
 
 
