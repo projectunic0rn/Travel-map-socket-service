@@ -5,6 +5,11 @@ var io = require('socket.io')(server);
 const port = process.env.PORT || 9500
 
 
+app.get("/", (req, res) => {
+    res.send("Welome to thr travel map socket service!")
+})
+
+
 server.listen(port, () => {
     console.log("Server up on port " + port)
 });
