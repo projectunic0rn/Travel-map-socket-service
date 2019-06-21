@@ -10,5 +10,20 @@ server.listen(port, () => {
 });
 
 io.on('connection', (socket) => {
-    console.log("USER CONNECTED")
+    var client = {
+        clientId: socket.id
+    }
+    
+    // send the client their ID to be used for direct communcation
+    io.sockets.to(client.clientId).emit("client-id", client.clientId)
+
+
+
+    io.on("friend-request", (data) => {
+        let clientId = data.clientId;
+        let sendingUser = data.sendingUser;
+
+        // send friend request alert to receiving client id
+        io.sockets.to(clientId).emit("new-friend-request", sendingUser);
+    })
 })
