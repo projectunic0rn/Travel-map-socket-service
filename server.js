@@ -57,9 +57,10 @@ io.on('connection', async (socket) => {
         }
     })
 
-    socket.on("test", (data) => {
-        console.log(data)
+    socket.on("new-trip", (username) => {
+        socket.broadcast.emit("trip-created", username);
     })
+
 
 
     // remove the client from current connections when they disconnect
